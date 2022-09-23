@@ -1,6 +1,7 @@
 import React from "react";
 import CardBody from "./CardBody";
 import {connect} from 'react-redux';
+import { incrementCounter, decrementCounter} from "../redux/actions";
 
 
 const Counter = ({count, increment, decrement}) => {
@@ -24,8 +25,8 @@ const Counter = ({count, increment, decrement}) => {
 const mapDispatchToProps = dispatch => {
     return (
         {
-        increment: () => dispatch({type: "INCREMENT"}),
-        decrement: () => dispatch({type: "DECREMENT"})
+        increment: () => dispatch(incrementCounter()),
+        decrement: () => dispatch(decrementCounter())
         }
 )};
 
